@@ -159,6 +159,17 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .hero .tri{display:none}
   .insights a{grid-template-columns:1fr}
 }
+.principles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
+.principles div{padding:24px 22px 24px 0;min-width:0}
+.principles div + div{border-left:1px solid var(--line);padding-left:22px}
+.principles small{font:500 12px/1 var(--mono);color:var(--accent);letter-spacing:.1em}
+.principles h3{font-size:19px;margin:14px 0 8px}
+.principles p{margin:0;color:var(--muted);font-size:15px}
+.industries{margin-top:44px;display:flex;flex-direction:column;gap:14px}
+.chips2{display:flex;flex-wrap:wrap;gap:10px}
+.chips2 span{font-weight:500;font-size:15px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+@media (max-width:860px){.principles{grid-template-columns:1fr 1fr}.principles div:nth-child(3){border-left:0;padding-left:0}}
+@media (max-width:560px){.principles{grid-template-columns:1fr}.principles div + div{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
 </style>
 </head>
 <body>
@@ -168,8 +179,8 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <nav class="top" aria-label="Main">
       <a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 1 L19 17 H1 Z" fill="#0d0f12"/></svg></span>Ditrion.ai</a>
       <div class="navlinks">
-        <a href="#focus">Focus</a>
-        <a href="#building">Building</a>
+        <a href="#focus">Expertise</a>
+        <a href="#approach">Approach</a>
         <a href="#insights">Insights</a>
         <a href="#about">About</a>
       </div>
@@ -178,11 +189,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div>
         <span class="tag">DATA · TECH · AI</span>
         <h1>Practical AI for <em>real business software</em>.</h1>
-        <p class="lede">Ditrion.ai explores how to add LLMs, RAG, AI agents and MCP to the business applications companies already run, from .NET APIs and Angular front ends through to production.</p>
+        <p class="lede">Ditrion.ai is a Melbourne-based AI and software practice focused on bringing LLMs, RAG, AI agents and MCP into the business applications companies already run, built on solid .NET engineering from API to production.</p>
         <div class="chips"><span>.NET</span><span>LLMs</span><span>RAG</span><span>Agents</span><span>MCP</span><span>APIs</span><span>DevOps</span></div>
         <div class="ctas">
-          <a class="btn light" href="#insights">Read the insights</a>
-          <a class="btn ghost" href="https://www.linkedin.com/company/ditrion-ai/" target="_blank" rel="noopener">Follow on LinkedIn</a>
+          <a class="btn light" href="#contact">Get in touch</a>
+          <a class="btn ghost" href="#insights">Read the insights</a>
         </div>
       </div>
       <div class="code" aria-label="Example: turning an email into a work order with C#">
@@ -203,17 +214,10 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </header>
 
 <main>
-  <div class="wrap">
-    <div class="stats">
-      <div><b>15+</b><span>years building business software</span></div>
-      <div><b>6</b><span>industries, from travel to payroll</span></div>
-      <div><b>7</b><span>insights published on LinkedIn</span></div>
-    </div>
-  </div>
 
   <section id="focus">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Focus</span><h2>What Ditrion.ai explores</h2><p>Six areas where AI meets the software engineering businesses already depend on.</p></div>
+      <div class="sec-head"><span class="eyebrow">Expertise</span><h2>Where AI meets real software engineering</h2><p>Six areas Ditrion.ai works across, from the first model call to running it in production.</p></div>
       <div class="focus">
         <article class="fcard">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg>
@@ -243,25 +247,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section id="building">
-    <div class="wrap build">
-      <div>
-        <span class="status">Now building</span>
-        <h2>AI Work Order Assistant</h2>
-        <p>A .NET 10 and Angular app that brings AI into a familiar business workflow: maintenance and work orders.</p>
-        <p>Each piece is built small, tested properly and shared on LinkedIn with what worked and what didn't.</p>
+  <section id="approach">
+    <div class="wrap">
+      <div class="sec-head"><span class="eyebrow">Approach</span><h2>How Ditrion.ai thinks about AI</h2><p>AI is only useful when it fits the way a business already works. These principles shape every build and every insight.</p></div>
+      <div class="principles">
+        <div><small>01</small><h3>Start with the workflow</h3><p>Begin with a real business process and the problem in it, then decide whether AI is the right tool at all.</p></div>
+        <div><small>02</small><h3>Structured, checked output</h3><p>Models return typed data that is validated before it reaches a database or a customer.</p></div>
+        <div><small>03</small><h3>Secure by design</h3><p>Least-privilege access, untrusted input treated as untrusted, and a human in the loop for anything risky.</p></div>
+        <div><small>04</small><h3>Measured in production</h3><p>Accuracy, cost and latency are tracked like any other part of the system, not assumed.</p></div>
       </div>
-      <div class="flow">
-        <div><small>IN</small><span><b>A messy request</b>An email from a tenant or client, in their own words.</span></div>
-        <div><small>AI</small><span><b>Structured, checked output</b>A model extracts the details into a typed C# object, validated before saving.</span></div>
-        <div><small>OUT</small><span><b>A work order the system can use</b>Saved, routed and tracked like any other job.</span></div>
+      <div class="industries">
+        <span class="eyebrow">Industry experience</span>
+        <div class="chips2"><span>Financial services</span><span>Travel</span><span>Healthcare</span><span>Education</span><span>Payroll</span><span>Enterprise SaaS</span></div>
       </div>
     </div>
   </section>
 
   <section id="insights">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Insights</span><h2>Latest from LinkedIn</h2><p>Short, checked posts for developers bringing AI into real software.</p></div>
+      <div class="sec-head"><span class="eyebrow">Insights</span><h2>Latest insights</h2><p>Practical, fact-checked notes on bringing AI into real software, published on LinkedIn.</p></div>
       <ul class="insights">
         <li><a href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><h3>Prompt injection is SQL injection again</h3><span class="t">Security</span></a></li>
         <li><a href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><h3>5 questions to ask before writing any AI code</h3><span class="t">Planning</span></a></li>
@@ -274,27 +278,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section id="labs">
-    <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Labs</span><h2>Experiments so far</h2></div>
-      <div class="labs">
-        <article class="lab"><h3>AI Test Case Generator</h3><p>Uses an LLM to suggest test cases from a requirement.</p><span class="meta">Experiment</span></article>
-        <article class="lab"><h3>AI Agent</h3><p>An LLM that works through a task step by step and uses tools to get it done.</p><span class="meta">Experiment</span></article>
-        <article class="lab"><h3>TODO App</h3><p>An Angular and .NET Web API app built with AI-assisted coding.</p><span class="meta"><a href="https://github.com/jaindollyy/todo-app" target="_blank" rel="noopener">View on GitHub →</a></span></article>
-      </div>
-    </div>
-  </section>
 
-  <section id="road">
-    <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Roadmap</span><h2>Where Ditrion.ai is heading</h2></div>
-      <div class="road">
-        <div><small>NOW</small><h3>Learn and share</h3><p>Builds and insights on adding AI to business software.</p></div>
-        <div><small>NEXT</small><h3>Build reusable tools</h3><p>Small AI tools for common workflows, such as work orders and document Q&amp;A.</p></div>
-        <div><small>LATER</small><h3>Help businesses adopt AI</h3><p>Bringing AI into the applications companies already use.</p></div>
-      </div>
-    </div>
-  </section>
 
   <section id="about">
     <div class="wrap">
@@ -304,16 +288,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div>
           <h3>Dolly Jain</h3>
           <div class="role">Founder · Melbourne, Australia</div>
-          <p>Full stack .NET engineer with 15+ years of experience, including 12+ years at Australian companies and earlier work for clients in the USA, UK and India. Has built business software across financial services, travel, healthcare, education, payroll and enterprise SaaS, with experience across the full software development life cycle in Agile teams, from requirements and design through build, testing and release. Now moving into AI engineering through Ditrion.ai.</p>
+          <p>Full stack .NET engineer with 15+ years of experience, including 12+ years at Australian companies and earlier work for clients in the USA, UK and India. Has built business software across financial services, travel, healthcare, education, payroll and enterprise SaaS, with experience across the full software development life cycle in Agile teams, from requirements and design through build, testing and release. Founded Ditrion.ai to bring that engineering discipline to AI.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section>
+  <section id="contact">
     <div class="wrap">
       <div class="cta">
-        <div><h2>Follow Ditrion.ai</h2><p>New builds, honest results and AI news explained for developers and businesses.</p><p class="mail">Get in touch: <a href="mailto:hello@ditrion.dev">hello@ditrion.dev</a></p></div>
+        <div><h2>Let's talk about AI in your software</h2><p>For questions, collaboration or a conversation about bringing AI into an existing application.</p><p class="mail">Email: <a href="mailto:hello@ditrion.dev">hello@ditrion.dev</a></p></div>
         <div class="ctas" style="margin-top:0">
           <a class="btn accent" href="https://www.linkedin.com/company/ditrion-ai/" target="_blank" rel="noopener">Follow on LinkedIn</a>
           <a class="btn ghost" href="https://github.com/jaindollyy" target="_blank" rel="noopener">GitHub</a>
