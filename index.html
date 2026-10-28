@@ -54,7 +54,7 @@ nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;f
 .navlinks{display:flex;gap:22px;flex-wrap:wrap}
 .navlinks a{color:var(--ink-muted);text-decoration:none;font-size:14px}
 .navlinks a:hover{color:var(--ink-fg)}
-.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-block:56px 72px}
+.hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-block:32px 48px}
 .hero-grid > *{min-width:0}
 .hero .tag{font:500 12px/1 var(--mono);letter-spacing:.2em;color:var(--ink-muted)}
 .hero h1{font-size:clamp(40px,6.2vw,68px);font-weight:800;letter-spacing:-.025em;margin-top:18px}
@@ -84,7 +84,8 @@ nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;f
 .stats span{color:var(--muted);font-size:14px}
 
 /* ---------- sections ---------- */
-section{padding-block:72px}
+section{padding-block:64px}
+main > section:first-child{padding-top:44px}
 section + section{border-top:1px solid var(--line)}
 .sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:34px}
 .sec-head p{max-width:640px}
@@ -171,6 +172,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .chips2 span{font-weight:500;font-size:15px;padding:10px 16px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
 @media (max-width:860px){.principles{grid-template-columns:1fr 1fr}.principles div:nth-child(3){border-left:0;padding-left:0}}
 @media (max-width:560px){.principles{grid-template-columns:1fr}.principles div + div{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
+.demo{display:flex;flex-direction:column;gap:0;min-width:0}
+.demo-card{background:var(--ink-2);border:1px solid var(--ink-line);border-radius:14px;padding:20px}
+.demo-card.out{border-color:var(--ink-accent)}
+.demo-label{display:block;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:12px}
+.demo-card.out .demo-label{color:var(--ink-accent)}
+.demo-email{margin:0;color:var(--ink-fg);font-size:16px;line-height:1.55}
+.demo-step{display:flex;align-items:center;gap:10px;padding:14px 0 14px 22px;color:var(--ink-muted);font-size:13px;position:relative}
+.demo-step::before{content:"";width:1px;height:34px;background:var(--ink-accent);opacity:.6}
+.demo-step::after{content:"";position:absolute;left:18px;bottom:8px;border:4px solid transparent;border-top:6px solid var(--ink-accent);opacity:.8}
+.demo-fields{margin:0;display:grid;grid-template-columns:1fr 1fr;gap:12px 20px}
+.demo-fields div{min-width:0}
+.demo-fields dt{font-size:12px;color:var(--ink-muted)}
+.demo-fields dd{margin:2px 0 0;font-weight:600;font-size:17px;color:var(--ink-fg)}
 </style>
 </head>
 <body>
@@ -197,18 +211,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <a class="btn ghost" href="#insights">Read the insights</a>
         </div>
       </div>
-      <div class="code" aria-label="Example: turning an email into a work order with C#">
-        <div class="bar"><i></i><i></i><i></i><b>WorkOrderAssistant.cs</b></div>
-<pre><span class="c">// A messy email becomes a typed C# object</span>
-<span class="k">var</span> response = <span class="k">await</span> client
-    .GetResponseAsync&lt;<span class="k">WorkOrder</span>&gt;(
-        <span class="s">$"Create a work order from: {email}"</span>);
-
-<span class="k">WorkOrder</span> job = response.Result;
-
-<span class="c">// job.Type      → "Plumbing"</span>
-<span class="c">// job.Location  → "Unit 4"</span>
-<span class="c">// job.Priority  → "High"</span></pre>
+      <div class="demo" aria-label="Example: AI turns a customer email into a booking change request">
+        <div class="demo-card">
+          <span class="demo-label">Email received</span>
+          <p class="demo-email">"Hi, can you move my Melbourne to Singapore flight on 12 March to the 14th? Still economy please. Booking ref QX7P2L."</p>
+        </div>
+        <div class="demo-step"><span>AI reads it, then the app checks the result</span></div>
+        <div class="demo-card out">
+          <span class="demo-label">Change request created</span>
+          <dl class="demo-fields">
+            <div><dt>Request</dt><dd>Change date</dd></div>
+            <div><dt>Booking</dt><dd>QX7P2L</dd></div>
+            <div><dt>Route</dt><dd>MEL → SIN</dd></div>
+            <div><dt>New date</dt><dd>14 March</dd></div>
+          </dl>
+        </div>
       </div>
     </div>
   </div>
