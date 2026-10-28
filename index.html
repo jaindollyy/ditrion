@@ -179,7 +179,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .demo-fields div{min-width:0}
 .demo-fields dt{font-size:12px;color:var(--ink-muted)}
 .demo-fields dd{margin:2px 0 0;font-weight:600;font-size:17px;color:var(--ink-fg)}
-.demo-feature{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:center}
+.demo-feature{display:grid;grid-template-columns:1.4fr 1fr;gap:36px;align-items:start}
 .demo-feature > *{min-width:0}
 .demo-video{border-radius:14px;overflow:hidden;border:1px solid var(--line);background:var(--ink);box-shadow:0 1px 0 var(--line)}
 .demo-video video{display:block;width:100%;height:auto;aspect-ratio:1280/608}
@@ -211,6 +211,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .icard.feature:hover .arr{color:var(--ink-accent)}
 @media (max-width:860px){.igrid{grid-template-columns:1fr 1fr}.demo-feature.flip{grid-template-columns:1fr}.demo-feature.flip .demo-video{order:0;max-width:360px}}
 @media (max-width:560px){.igrid{grid-template-columns:1fr}.icard.feature{grid-column:auto}.icard{min-height:0}}
+.demo-copy .note{margin:14px 0 0;font-size:14.5px}
+.stack{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.stack span{font:500 12px/1 var(--mono);padding:7px 10px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--fg)}
 </style>
 </head>
 <body>
@@ -319,12 +322,14 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <div class="demo-copy">
             <span class="pill">Testing</span>
             <h3>AI Test Case Generator</h3>
-            <p>Describe a feature and its user story, and the app generates structured test cases: preconditions, test steps, expected results and edge cases.</p>
+            <p>Describe a feature and its user story, and AI generates structured test cases covering positive, negative and edge case scenarios, each with preconditions, steps and expected results.</p>
             <ul>
               <li>Review each case, then approve it or mark it for review</li>
               <li>Export selected cases to Excel or PDF</li>
               <li>Track drafts, reviews and approvals in a dashboard</li>
             </ul>
+            <p class="note">n8n sits between the app and the model as middleware, so switching AI providers means changing one endpoint.</p>
+            <div class="stack"><span>Angular 17</span><span>PrimeNG</span><span>n8n</span><span>LLM API</span><span>TypeScript</span></div>
           </div>
         </article>
         <article class="demo-feature flip">
