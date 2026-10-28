@@ -139,6 +139,9 @@ section + section{border-top:1px solid var(--line)}
 .cta h2{font-size:clamp(26px,3.4vw,36px)}
 .cta p{margin:10px 0 0;color:var(--ink-muted);max-width:46ch}
 footer{padding-block:30px 40px;color:var(--muted);font-size:13px}
+footer a{color:inherit}
+.cta .mail{margin-top:14px;color:var(--ink-fg)}
+.cta .mail a{color:var(--ink-accent);font-weight:600}
 footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
 @media (max-width:860px){
@@ -310,7 +313,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <section>
     <div class="wrap">
       <div class="cta">
-        <div><h2>Follow Ditrion.ai</h2><p>New builds, honest results and AI news explained for developers and businesses.</p></div>
+        <div><h2>Follow Ditrion.ai</h2><p>New builds, honest results and AI news explained for developers and businesses.</p><p class="mail">Get in touch: <a href="mailto:hello@ditrion.dev">hello@ditrion.dev</a></p></div>
         <div class="ctas" style="margin-top:0">
           <a class="btn accent" href="https://www.linkedin.com/company/ditrion-ai/" target="_blank" rel="noopener">Follow on LinkedIn</a>
           <a class="btn ghost" href="https://github.com/jaindollyy" target="_blank" rel="noopener">GitHub</a>
@@ -320,6 +323,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   </section>
 </main>
 
-<footer><div class="wrap"><span>© 2026 Ditrion.ai · Melbourne, Australia</span><span>ditrion.dev</span></div></footer>
+<footer><div class="wrap"><span>© 2026 Ditrion.ai · Melbourne, Australia</span><span><a href="mailto:hello@ditrion.dev">hello@ditrion.dev</a> · ditrion.dev</span></div></footer>
 </body>
 </html>
