@@ -220,6 +220,20 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .more-gh b{grid-column:2;grid-row:1/3;font-size:20px;color:var(--accent);transition:transform .15s ease}
 .more-gh:hover{border-color:var(--accent)}
 .more-gh:hover b{transform:translateX(3px)}
+.oss{margin-top:64px}
+.oss-title{font:500 12px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:18px}
+.oss-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.oss-card{display:flex;flex-direction:column;gap:10px;padding:22px;background:var(--surface);border:1px solid var(--line);border-radius:14px;color:var(--fg);text-decoration:none;transition:transform .15s ease,border-color .15s ease;min-width:0}
+.oss-card:hover{transform:translateY(-2px);border-color:var(--accent)}
+.oss-card .pill{align-self:flex-start}
+.oss-card h4{margin:0;font:700 19px/1.25 var(--display)}
+.oss-card p{margin:0;color:var(--muted);font-size:15px}
+.oss-card .stack{margin-top:2px}
+.oss-link{margin-top:auto;padding-top:6px;display:inline-flex;align-items:center;gap:8px;font-weight:600;color:var(--accent);font-size:14.5px}
+.ghi{width:16px;height:16px}
+.code-link{display:inline-flex;align-items:center;gap:8px;margin-left:18px;font-weight:600;text-decoration:none}
+.code-link:hover{text-decoration:underline}
+@media (max-width:760px){.oss-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -351,11 +365,30 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
               <li>Covers strengths, weaknesses and certifications</li>
               <li>Runs as a public Hugging Face Space</li>
             </ul>
-            <a class="try" href="https://huggingface.co/spaces/dollyjain/career_conversation" target="_blank" rel="noopener">Try it on Hugging Face →</a>
+            <a class="try" href="https://huggingface.co/spaces/dollyjain/career_conversation" target="_blank" rel="noopener">Try it on Hugging Face →</a><a class="code-link" href="https://github.com/jaindollyy/career-conversation-agent" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
           </div>
         </article>
       </div>
-      <a class="more-gh" href="https://github.com/jaindollyy" target="_blank" rel="noopener"><span>More work on GitHub</span><small>Including full stack samples such as an Angular and .NET Web API TODO app</small><b aria-hidden="true">→</b></a>
+      <div class="oss">
+        <h3 class="oss-title">Open-source projects</h3>
+        <div class="oss-grid">
+          <a class="oss-card" href="https://github.com/jaindollyy/docuask-rag-dotnet" target="_blank" rel="noopener">
+            <span class="pill">RAG</span>
+            <h4>DocuAsk: RAG over documents in .NET</h4>
+            <p>Ask questions about a folder of documents and get short answers that cite their sources. Chunking, embeddings, vector search and grounded prompts, with a cached index and unit tests.</p>
+            <div class="stack"><span>C#</span><span>.NET 10</span><span>Microsoft.Extensions.AI</span><span>xUnit</span></div>
+            <span class="oss-link"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</span>
+          </a>
+          <a class="oss-card" href="https://github.com/jaindollyy/booking-desk-mcp" target="_blank" rel="noopener">
+            <span class="pill">MCP</span>
+            <h4>Booking Desk: MCP server in C#</h4>
+            <p>Lets an AI assistant look up flight bookings and request date changes through MCP tools. Every input is validated, and changes go to a person for review.</p>
+            <div class="stack"><span>C#</span><span>.NET 10</span><span>MCP C# SDK</span><span>xUnit</span></div>
+            <span class="oss-link"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</span>
+          </a>
+        </div>
+      </div>
+      <a class="more-gh" href="https://github.com/jaindollyy" target="_blank" rel="noopener"><span>More on GitHub</span><small>All projects, including full stack samples such as an Angular and .NET Web API TODO app</small><b aria-hidden="true">→</b></a>
     </div>
   </section>
 
@@ -385,7 +418,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div>
           <h3>Dolly Jain</h3>
           <div class="role">Founder · Melbourne, Australia</div>
-          <p>Full stack .NET engineer with 15+ years of experience, including 12+ years at Australian companies and earlier work for clients in the USA, UK and India. Has built business software across financial services, travel, healthcare, education, payroll and enterprise SaaS, with experience across the full software development life cycle in Agile teams, from requirements and design through build, testing and release. Founded Ditrion.ai to bring that engineering discipline to AI.</p>
+          <p>Full stack .NET engineer with nearly 20 years of experience, including 12+ years at Australian companies and earlier work for clients in the USA, UK and India. Has built business software across financial services, travel, healthcare, education, payroll and enterprise SaaS, with experience across the full software development life cycle in Agile teams, from requirements and design through build, testing and release. Founded Ditrion.ai to bring that engineering discipline to AI.</p>
         </div>
       </div>
     </div>
