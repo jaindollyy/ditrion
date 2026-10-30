@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;text-wrap:balance}
 /* ---------- hero ---------- */
 .hero{background:var(--ink);color:var(--ink-fg);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--ink-line) 1.2px,transparent 1.3px);background-size:26px 26px;opacity:.55;mask-image:linear-gradient(90deg,transparent 0%,#000 55%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%)}
-.hero .tri{position:absolute;right:-60px;top:70px;width:420px;height:auto;opacity:.35}
+.tri-mark{display:block;width:170px;height:auto;margin:0 auto 22px}
 .hero > .wrap{position:relative}
 nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--ink-fg);text-decoration:none;font:700 19px/1 var(--display)}
@@ -152,7 +152,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .stats div + div{border-left:0;border-top:1px solid var(--line);padding-left:0}
   .founder{grid-template-columns:1fr}
   .cta{padding:28px}
-  .hero .tri{display:none}
+  .tri-mark{display:none}
   .insights a{grid-template-columns:1fr}
 }
 .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
@@ -251,7 +251,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 </head>
 <body>
 <header class="hero">
-  <svg class="tri" viewBox="0 0 200 180" aria-hidden="true"><path d="M100 8 L192 172 H8 Z" fill="none" stroke="#3a404b" stroke-width="2"/></svg>
   <div class="wrap">
     <nav class="top" aria-label="Main">
       <a class="brand" href="#top"><span class="mark"><svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 1 L19 17 H1 Z" fill="#0d0f12"/></svg></span>Ditrion.ai</a>
@@ -277,6 +276,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         </div>
       </div>
       <div class="demo" aria-label="Example: AI turns a customer email into a booking change request">
+    <svg class="tri-mark" viewBox="-14 -10 228 204" aria-hidden="true">
+      <defs>
+        <path id="triL" d="M8 172 L100 8"/>
+        <path id="triR" d="M100 8 L192 172"/>
+        <path id="triB" d="M8 172 L192 172"/>
+      </defs>
+      <path d="M100 8 L192 172 H8 Z" fill="none" stroke="#606878" stroke-width="2"/>
+      <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3" fill="#7d98ff" text-anchor="middle">
+        <text dy="-8"><textPath href="#triL" startOffset="50%">DATA</textPath></text>
+        <text dy="-8"><textPath href="#triR" startOffset="50%">TECH</textPath></text>
+        <text dy="20"><textPath href="#triB" startOffset="50%">AI</textPath></text>
+      </g>
+    </svg>
         <div class="demo-card">
           <span class="demo-label">Email received</span>
           <p class="demo-email">"Hi, can you move my Melbourne to Singapore flight on 12 March to the 14th? Still economy please. Booking ref QX7P2L."</p>
