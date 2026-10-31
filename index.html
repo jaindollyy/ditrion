@@ -45,7 +45,7 @@ h1,h2,h3{font-family:var(--display);margin:0;line-height:1.08;text-wrap:balance}
 /* ---------- hero ---------- */
 .hero{background:var(--ink);color:var(--ink-fg);position:relative;overflow:hidden}
 .hero::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--ink-line) 1.2px,transparent 1.3px);background-size:26px 26px;opacity:.55;mask-image:linear-gradient(90deg,transparent 0%,#000 55%);-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 55%)}
-.tri-mark{display:block;width:170px;height:auto;margin:0 auto 22px}
+.tri-mark{display:block;width:132px;height:auto;margin:0 auto 20px}
 .hero > .wrap{position:relative}
 nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;padding-block:22px}
 .brand{display:flex;align-items:center;gap:10px;color:var(--ink-fg);text-decoration:none;font:700 19px/1 var(--display)}
@@ -152,7 +152,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   .stats div + div{border-left:0;border-top:1px solid var(--line);padding-left:0}
   .founder{grid-template-columns:1fr}
   .cta{padding:28px}
-  .tri-mark{display:none}
   .insights a{grid-template-columns:1fr}
 }
 .principles{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--line)}
@@ -247,6 +246,21 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .avail{margin:14px 0 0;color:var(--ink-accent);font-weight:500;font-size:15px}
 .honest{margin:24px 0 0;padding:16px 20px;border-left:3px solid var(--accent);background:var(--accent-soft);border-radius:0 10px 10px 0;max-width:780px;font-size:15.5px}
 @media (max-width:860px){.nowlist,.ways{grid-template-columns:1fr}}
+.igrid{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 32px}
+.icard{min-height:0;flex-direction:row;align-items:center;gap:14px;padding:15px 30px 15px 0;background:transparent;border:0;border-bottom:1px solid var(--line);border-radius:0}
+.icard:hover{transform:none;border-color:var(--line)}
+.icard:hover h3{color:var(--accent)}
+.icard h3{font-size:15.5px;text-wrap:pretty;transition:color .15s ease}
+.icard .pill{align-self:center;flex:none;min-width:78px;text-align:center}
+.icard .arr{top:50%;margin-top:-8px;right:4px}
+.icard.feature{grid-column:1/-1;flex-direction:column;align-items:flex-start;gap:8px;margin-bottom:10px;padding:22px 56px 22px 24px;border-radius:14px;border:1px solid var(--ink)}
+.icard.feature .pill{align-self:flex-start;min-width:0}
+.icard.feature h3{font-size:22px}
+.icard.feature:hover h3{color:var(--ink-fg)}
+.icard.feature .arr{top:22px;margin-top:0;right:20px}
+@media (max-width:860px){.igrid{grid-template-columns:1fr}}
+.tagmark{display:inline-flex;align-items:center;gap:10px}
+.tagmark svg{width:16px;height:15px;color:var(--ink-accent)}
 </style>
 </head>
 <body>
@@ -258,7 +272,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <a href="#focus">What I do</a>
         <a href="#approach">Approach</a>
         <a href="#demos">Demos</a>
-        <a href="#now">Recent work</a>
         <a href="#insights">Insights</a>
         <a href="#about">About</a>
         <a href="#work">Services</a>
@@ -266,29 +279,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </nav>
     <div class="hero-grid" id="top">
       <div>
-        <span class="tag">DATA · TECH · AI</span>
+        <span class="tag tagmark"><svg viewBox="0 0 20 18" aria-hidden="true"><path d="M10 1.5 L18.5 16.5 H1.5 Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>DATA · TECH · AI</span>
         <h1>Practical AI for <em>real business software</em>.</h1>
-        <p class="lede">I'm Dolly Jain, a Melbourne-based .NET and Angular engineer with nearly 20 years of experience. Through Ditrion.ai, I help add AI features to business software using LLMs, RAG and MCP, with the integration, testing and security needed to make them useful in real applications.</p>
-        <div class="chips"><span>.NET</span><span>LLMs</span><span>RAG</span><span>Agents</span><span>MCP</span><span>APIs</span><span>Angular</span></div>
+        <p class="lede">I'm Dolly Jain, a Melbourne-based software engineer building practical AI features for business applications: LLMs, RAG, agents and MCP, with the API connections, validation, security and testing that make them reliable. Working examples are below.</p>
+        <div class="chips"><span>.NET</span><span>API Integration</span><span>LLMs &amp; RAG</span><span>MCP</span><span>Angular</span></div>
         <div class="ctas">
           <a class="btn light" href="#work">Discuss a project</a>
           <a class="btn ghost" href="#demos">See the demos</a>
         </div>
       </div>
       <div class="demo" aria-label="Example: AI turns a customer email into a booking change request">
-    <svg class="tri-mark" viewBox="-14 -10 228 204" aria-hidden="true">
-      <defs>
-        <path id="triL" d="M8 172 L100 8"/>
-        <path id="triR" d="M100 8 L192 172"/>
-        <path id="triB" d="M8 172 L192 172"/>
-      </defs>
-      <path d="M100 8 L192 172 H8 Z" fill="none" stroke="#606878" stroke-width="2"/>
-      <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" letter-spacing="3" fill="#7d98ff" text-anchor="middle">
-        <text dy="-8"><textPath href="#triL" startOffset="50%">DATA</textPath></text>
-        <text dy="-8"><textPath href="#triR" startOffset="50%">TECH</textPath></text>
-        <text dy="20"><textPath href="#triB" startOffset="50%">AI</textPath></text>
-      </g>
-    </svg>
         <div class="demo-card">
           <span class="demo-label">Email received</span>
           <p class="demo-email">"Hi, can you move my Melbourne to Singapore flight on 12 March to the 14th? Still economy please. Booking ref QX7P2L."</p>
@@ -428,21 +428,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     </div>
   </section>
 
-  <section id="now">
-    <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Recent work</span><h2>What I'm working on</h2></div>
-      <div class="nowlist">
-        <div><small>Shipped</small><h3>Booking API behind the MCP server</h3><p>The Booking Desk MCP server now fetches its data from an ASP.NET Core API over HTTP, with integration tests.</p></div>
-        <div><small>Shipped</small><h3>DocuAsk RAG in .NET</h3><p>Question answering over documents with cited sources, built on Microsoft.Extensions.AI.</p></div>
-      </div>
-    </div>
-  </section>
-
   <section id="insights">
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">Insights</span><h2>Latest insights</h2><p>Practical, fact-checked notes on bringing AI into real software, published on LinkedIn.</p></div>
       <div class="igrid">
         <a class="icard feature" href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><span class="pill">Article</span><h3>Full stack just got another layer</h3><p>How the AI engineer role grows out of full stack development, and what is genuinely new.</p><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <a class="icard" href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><span class="pill">MCP</span><h3>How much an AI agent should do on its own</h3><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="icard" href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><span class="pill">Security</span><h3>Prompt injection is SQL injection again</h3><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="icard" href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><span class="pill">Planning</span><h3>5 questions to ask before writing any AI code</h3><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
         <a class="icard" href="https://www.linkedin.com/company/ditrion-ai/posts/" target="_blank" rel="noopener"><span class="pill">Testing</span><h3>Assert.AreEqual stops working with AI</h3><svg class="arr" viewBox="0 0 16 16" aria-hidden="true"><path d="M5 11L11 5M6 5h5v5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
