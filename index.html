@@ -233,6 +233,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .ghi{width:16px;height:16px}
 .code-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-weight:600;text-decoration:none}
 .code-link:hover{text-decoration:underline}
+.try + .code-link{margin-left:18px}
 @media (max-width:760px){.oss-grid{grid-template-columns:1fr}}
 .nowlist{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;max-width:900px}
 .nowlist > div{padding:20px;border:1px solid var(--line);border-radius:14px;background:var(--surface);min-width:0}
@@ -411,18 +412,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <a class="try" href="https://github.com/jaindollyy/booking-desk-mcp" target="_blank" rel="noopener">View code on GitHub →</a>
           </div>
         </article>
-      </div>
-      <div class="oss">
-        <h3 class="oss-title">More open-source projects</h3>
-        <div class="oss-grid">
-          <a class="oss-card" href="https://github.com/jaindollyy/docuask-rag-dotnet" target="_blank" rel="noopener">
+        <article class="demo-feature flip">
+          <div class="demo-video tall">
+            <video src="docuask-web.mp4" poster="docuask-web.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of Document Ask: uploading a tender and asking questions about it" style="aspect-ratio:720/840"></video>
+          </div>
+          <div class="demo-copy">
             <span class="pill">RAG</span>
-            <h4>DocuAsk: RAG over documents in .NET</h4>
-            <p>Ask questions about a folder of documents and get short answers that cite their sources. Chunking, embeddings, vector search and grounded prompts, with a cached index and unit tests.</p>
-            <div class="stack"><span>C#</span><span>.NET 10</span><span>Microsoft.Extensions.AI</span><span>xUnit</span></div>
-            <span class="oss-link"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View on GitHub</span>
-          </a>
-        </div>
+            <h3>Document Ask</h3>
+            <p>Upload a document and ask questions about it. Answers come only from the document, with the passages they came from. In the demo, it reads a tender and finds the closing date, mandatory requirements and evaluation weightings.</p>
+            <ul>
+              <li>Upload PDF, Markdown or text files</li>
+              <li>Every answer cites its source passages, with similarity scores</li>
+              <li>Says so when the answer isn't in the documents, instead of guessing</li>
+              <li>Runs on a local model (Ollama) or OpenAI with a setting change</li>
+            </ul>
+            <div class="stack"><span>C#</span><span>.NET 10</span><span>Microsoft.Extensions.AI</span><span>Ollama</span><span>xUnit</span></div>
+            <a class="try" href="docuask-cli.mp4" target="_blank" rel="noopener">Watch the CLI version →</a><a class="code-link" href="https://github.com/jaindollyy/docuask-rag-dotnet" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
+          </div>
+        </article>
       </div>
       <a class="more-gh" href="https://github.com/jaindollyy" target="_blank" rel="noopener"><span>More on GitHub</span><small>All projects, including full stack samples such as an Angular and .NET Web API TODO app</small><b aria-hidden="true">→</b></a>
     </div>
