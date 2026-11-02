@@ -299,12 +299,12 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 @media (prefers-reduced-motion:reduce){.scene.on,.scene.on .demo-step,.scene.on .demo-card.out{animation:none}}
 /* proof strip */
 .proof{background:var(--surface);border-bottom:1px solid var(--line)}
-.proof .wrap{display:grid;grid-template-columns:repeat(4,1fr)}
+.proof .wrap{display:grid;grid-template-columns:repeat(3,1fr)}
 .proof .wrap > div{padding:22px 18px 22px 0;min-width:0}
 .proof .wrap > div + div{border-left:1px solid var(--line);padding-left:18px}
 .proof b{display:block;font:800 22px/1.15 var(--display);letter-spacing:-.01em}
 .proof span{display:block;margin-top:4px;color:var(--muted);font-size:13.5px;line-height:1.4}
-@media (max-width:860px){.proof .wrap{grid-template-columns:1fr 1fr}.proof .wrap > div:nth-child(3){border-left:0;padding-left:0}.proof .wrap > div:nth-child(n+3){border-top:1px solid var(--line)}}
+@media (max-width:600px){.proof .wrap{grid-template-columns:1fr}.proof .wrap > div + div{border-left:0;padding-left:0;border-top:1px solid var(--line)}}
 /* now building */
 .building{background:var(--ink);color:var(--ink-fg);border-top:0!important}
 .building .eyebrow{color:var(--ink-muted);display:inline-flex;align-items:center;gap:10px}
@@ -339,6 +339,19 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .gh-follow{margin-top:34px;color:var(--ink-accent)}
 @media (max-width:860px){.pipe{grid-template-columns:1fr 1fr}.pipe li::after{display:none}.phases{grid-template-columns:1fr;border-top:0}.ph{padding:12px 0 12px 16px}.ph::before{top:12px;bottom:12px;left:0;right:auto;width:3px;height:auto}.ph.wip::before{background:linear-gradient(180deg,var(--ink-accent) 50%,var(--ink-line) 50%)}}
 #demos{border-bottom:0}
+
+/* mini flows on demos */
+.mini-flow{grid-column:1/-1;margin-top:4px}
+.mf-label{display:block;font:500 11px/1 var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.mini-flow ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:10px}
+.mini-flow li{position:relative;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:13px 13px 14px;display:flex;flex-direction:column;gap:4px;min-width:0}
+.mini-flow li:not(:last-child)::after{content:"";position:absolute;right:-9px;top:50%;width:8px;height:1px;background:var(--accent);opacity:.5}
+.mini-flow li:last-child{border-color:var(--accent);background:var(--accent-soft)}
+.mini-flow small{font:500 10.5px/1 var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.mini-flow b{font:700 14.5px/1.25 var(--display);color:var(--fg)}
+.mini-flow span{font-size:12.5px;line-height:1.4;color:var(--muted)}
+.demo-feature.flip .mini-flow{order:3}
+@media (max-width:860px){.mini-flow ol{grid-template-columns:1fr 1fr}.mini-flow li::after{display:none}.mini-flow li:last-child{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -434,7 +447,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
   <div><b>4</b><span>working AI demos, each with a video walkthrough</span></div>
   <div><b>Tests + CI</b><span>on every .NET project</span></div>
   <div><b>Local or cloud</b><span>switch between Ollama and OpenAI with one setting</span></div>
-  <div><b>~20 yrs</b><span>building production business software</span></div>
 </div></div>
 
 <main>
@@ -507,6 +519,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <p class="note">The app calls n8n through a single endpoint; n8n handles the connection to the model provider.</p>
             <div class="stack"><span>Angular 21</span><span>PrimeNG</span><span>n8n</span><span>LLM API</span><span>TypeScript</span></div>
           </div>
+          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>User story</b><span>Feature and story typed into the app</span></li><li><small>Angular 21</small><b>Web app</b><span>Sends the request to one endpoint</span></li><li><small>n8n</small><b>Workflow</b><span>Calls the model provider</span></li><li><small>LLM</small><b>Generates cases</b><span>Positive, negative and edge cases</span></li><li><small>Review</small><b>Approve and export</b><span>Excel or PDF</span></li></ol></div>
         </article>
         <article class="demo-feature flip">
           <div class="demo-video tall">
@@ -522,6 +535,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             </ul>
             <a class="code-link" href="https://github.com/jaindollyy/career-conversation-agent" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
           </div>
+          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Visitor question</b><span>Asked in the chat window</span></li><li><small>Gradio</small><b>Chat app</b><span>Python chat interface</span></li><li><small>OpenAI</small><b>Model + my profile</b><span>Summary and LinkedIn profile as context</span></li><li><small>Tools</small><b>Tool calling</b><span>Records questions it can't answer</span></li><li><small>Output</small><b>Answer</b><span>Unanswered questions reach me as a notification</span></li></ol></div>
         </article>
         <article class="demo-feature">
           <div class="demo-video">
@@ -539,6 +553,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stack"><span>C#</span><span>.NET 10</span><span>MCP C# SDK</span><span>ASP.NET Core</span><span>xUnit</span></div>
             <a class="try" href="https://github.com/jaindollyy/booking-desk-mcp" target="_blank" rel="noopener">View code on GitHub →</a>
           </div>
+          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Customer request</b><span>Typed to an AI assistant</span></li><li><small>MCP</small><b>C# MCP server</b><span>4 tools the assistant can call</span></li><li><small>C#</small><b>Validate</b><span>Reference, date, status, duplicates</span></li><li><small>API</small><b>Booking API</b><span>ASP.NET Core over HTTP</span></li><li><small>Output</small><b>Change request</b><span>Waits for a person to review</span></li></ol></div>
         </article>
         <article class="demo-feature flip">
           <div class="demo-video tall">
@@ -557,6 +572,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stack"><span>C#</span><span>.NET 10</span><span>Microsoft.Extensions.AI</span><span>Ollama</span><span>xUnit</span></div>
             <a class="try" href="#docuask-cli">See it from the command line ↓</a><a class="code-link" href="https://github.com/jaindollyy/docuask-rag-dotnet" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
           </div>
+          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Upload</b><span>PDF, Markdown or text</span></li><li><small>Index</small><b>Chunk + embed</b><span>Split into small passages</span></li><li><small>Search</small><b>Find passages</b><span>Most similar to the question</span></li><li><small>LLM</small><b>Answer</b><span>Ollama or OpenAI, from those passages only</span></li><li><small>Output</small><b>Answer + sources</b><span>With similarity scores</span></li></ol></div>
         </article>
         <div class="demo-sub" id="docuask-cli">
           <div class="demo-sub-head"><span class="pill">For developers</span><h4>The same engine from the command line</h4><p>Document Ask also runs as a console app: it indexes a folder of documents once, caches the embeddings, then answers questions in the terminal with the sources listed.</p></div>
