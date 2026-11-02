@@ -52,7 +52,7 @@ nav.top{display:flex;justify-content:space-between;align-items:center;gap:16px;f
 .mark{width:32px;height:32px;border-radius:8px;background:var(--ink-fg);display:grid;place-items:center}
 .mark svg{width:14px;height:14px}
 .navlinks{display:flex;gap:22px;flex-wrap:wrap}
-.navlinks a{color:var(--ink-muted);text-decoration:none;font-size:14px}
+.navlinks a{color:#c9ced8;text-decoration:none;font-size:15px;font-weight:500}
 .navlinks a:hover{color:var(--ink-fg)}
 .hero-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:48px;align-items:center;padding-block:32px 48px}
 .hero-grid > *{min-width:0}
@@ -370,6 +370,15 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .principles p{margin-bottom:16px!important}
 .inpractice{border-top:1px dashed var(--line)}
 .inpractice:hover{color:var(--accent)}
+
+.mini-flow summary{display:inline-flex;align-items:center;gap:8px;cursor:pointer;list-style:none;padding:8px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface);margin-bottom:0;color:var(--fg)}
+.mini-flow summary::-webkit-details-marker{display:none}
+.mini-flow summary::after{content:"";width:7px;height:7px;border-right:1.6px solid currentColor;border-bottom:1.6px solid currentColor;transform:rotate(45deg) translateY(-2px);transition:transform .15s ease}
+.mini-flow[open] summary::after{transform:rotate(-135deg) translateY(-1px)}
+.mini-flow summary:hover{border-color:var(--accent);color:var(--accent)}
+.mini-flow[open] ol{margin-top:12px}
+.gh-follow.btn{margin-top:34px;background:var(--ink-fg);color:var(--ink);text-decoration:none}
+.gh-follow.btn:hover{text-decoration:none}
 </style>
 </head>
 <body>
@@ -529,7 +538,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
       <div class="demos">
         <article id="demo-tcg" class="demo-feature">
           <div class="demo-video">
-            <video src="test-case-generator.mp4" poster="test-case-generator.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the AI Test Case Generator"></video>
+            <video src="test-case-generator.mp4" poster="test-case-generator.jpg" muted loop playsinline controls preload="metadata" aria-label="Walkthrough of the AI Test Case Generator"></video>
           </div>
           <div class="demo-copy">
             <span class="pill">Testing</span>
@@ -543,11 +552,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <p class="note">The app calls n8n through a single endpoint; n8n handles the connection to the model provider.</p>
             <div class="stack"><span>Angular 21</span><span>PrimeNG</span><span>n8n</span><span>LLM API</span><span>TypeScript</span></div>
           </div>
-          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>User story</b><span>Feature and story typed into the app</span></li><li><small>Angular 21</small><b>Web app</b><span>Sends the request to one endpoint</span></li><li><small>n8n</small><b>Workflow</b><span>Calls the model provider</span></li><li><small>LLM</small><b>Generates cases</b><span>Positive, negative and edge cases</span></li><li><small>Review</small><b>Approve and export</b><span>Excel or PDF</span></li></ol></div>
+          <details class="mini-flow" open><summary class="mf-label">How it works</summary><ol><li><small>Input</small><b>User story</b><span>Feature and story typed into the app</span></li><li><small>Angular 21</small><b>Web app</b><span>Sends the request to one endpoint</span></li><li><small>n8n</small><b>Workflow</b><span>Calls the model provider</span></li><li><small>LLM</small><b>Generates cases</b><span>Positive, negative and edge cases</span></li><li><small>Review</small><b>Approve and export</b><span>Excel or PDF</span></li></ol></details>
         </article>
         <article id="demo-career" class="demo-feature flip">
           <div class="demo-video tall">
-            <video src="career-chatbot.mp4" poster="career-chatbot.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the Career Conversation Agent"></video>
+            <video src="career-chatbot.mp4" poster="career-chatbot.jpg" muted loop playsinline controls preload="metadata" aria-label="Walkthrough of the Career Conversation Agent"></video>
           </div>
           <div class="demo-copy">
             <span class="pill">AI agent</span>
@@ -559,11 +568,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             </ul>
             <a class="code-link" href="https://github.com/jaindollyy/career-conversation-agent" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
           </div>
-          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Visitor question</b><span>Asked in the chat window</span></li><li><small>Gradio</small><b>Chat app</b><span>Python chat interface</span></li><li><small>OpenAI</small><b>Model + my profile</b><span>Summary and LinkedIn profile as context</span></li><li><small>Tools</small><b>Tool calling</b><span>Records questions it can't answer</span></li><li><small>Output</small><b>Answer</b><span>Unanswered questions reach me as a notification</span></li></ol></div>
+          <details class="mini-flow"><summary class="mf-label">How it works</summary><ol><li><small>Input</small><b>Visitor question</b><span>Asked in the chat window</span></li><li><small>Gradio</small><b>Chat app</b><span>Python chat interface</span></li><li><small>OpenAI</small><b>Model + my profile</b><span>Summary and LinkedIn profile as context</span></li><li><small>Tools</small><b>Tool calling</b><span>Records questions it can't answer</span></li><li><small>Output</small><b>Answer</b><span>Unanswered questions reach me as a notification</span></li></ol></details>
         </article>
         <article id="demo-booking" class="demo-feature">
           <div class="demo-video">
-            <video src="booking-desk-mcp.mp4" poster="booking-desk-mcp.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the Booking Desk MCP server"></video>
+            <video src="booking-desk-mcp.mp4" poster="booking-desk-mcp.jpg" muted loop playsinline controls preload="metadata" aria-label="Walkthrough of the Booking Desk MCP server"></video>
           </div>
           <div class="demo-copy">
             <span class="pill">MCP</span>
@@ -577,11 +586,11 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stack"><span>C#</span><span>.NET 10</span><span>MCP C# SDK</span><span>ASP.NET Core</span><span>xUnit</span></div>
             <a class="try" href="https://github.com/jaindollyy/booking-desk-mcp" target="_blank" rel="noopener">View code on GitHub →</a>
           </div>
-          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Customer request</b><span>Typed to an AI assistant</span></li><li><small>MCP</small><b>C# MCP server</b><span>4 tools the assistant can call</span></li><li><small>C#</small><b>Validate</b><span>Reference, date, status, duplicates</span></li><li><small>API</small><b>Booking API</b><span>ASP.NET Core over HTTP</span></li><li><small>Output</small><b>Change request</b><span>Waits for a person to review</span></li></ol></div>
+          <details class="mini-flow"><summary class="mf-label">How it works</summary><ol><li><small>Input</small><b>Customer request</b><span>Typed to an AI assistant</span></li><li><small>MCP</small><b>C# MCP server</b><span>4 tools the assistant can call</span></li><li><small>C#</small><b>Validate</b><span>Reference, date, status, duplicates</span></li><li><small>API</small><b>Booking API</b><span>ASP.NET Core over HTTP</span></li><li><small>Output</small><b>Change request</b><span>Waits for a person to review</span></li></ol></details>
         </article>
         <article id="demo-docuask" class="demo-feature flip">
           <div class="demo-video tall">
-            <video src="docuask-web.mp4" poster="docuask-web.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of Document Ask: uploading a tender and asking questions about it" style="aspect-ratio:720/840"></video>
+            <video src="docuask-web.mp4" poster="docuask-web.jpg" muted loop playsinline controls preload="metadata" aria-label="Walkthrough of Document Ask: uploading a tender and asking questions about it" style="aspect-ratio:720/840"></video>
           </div>
           <div class="demo-copy">
             <span class="pill">RAG</span>
@@ -596,7 +605,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
             <div class="stack"><span>C#</span><span>.NET 10</span><span>Microsoft.Extensions.AI</span><span>Ollama</span><span>xUnit</span></div>
             <a class="try" href="#docuask-cli">See it from the command line ↓</a><a class="code-link" href="https://github.com/jaindollyy/docuask-rag-dotnet" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>View code</a>
           </div>
-          <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Upload</b><span>PDF, Markdown or text</span></li><li><small>Index</small><b>Chunk + embed</b><span>Split into small passages</span></li><li><small>Search</small><b>Find passages</b><span>Most similar to the question</span></li><li><small>LLM</small><b>Answer</b><span>Ollama or OpenAI, from those passages only</span></li><li><small>Output</small><b>Answer + sources</b><span>With similarity scores</span></li></ol></div>
+          <details class="mini-flow"><summary class="mf-label">How it works</summary><ol><li><small>Input</small><b>Upload</b><span>PDF, Markdown or text</span></li><li><small>Index</small><b>Chunk + embed</b><span>Split into small passages</span></li><li><small>Search</small><b>Find passages</b><span>Most similar to the question</span></li><li><small>LLM</small><b>Answer</b><span>Ollama or OpenAI, from those passages only</span></li><li><small>Output</small><b>Answer + sources</b><span>With similarity scores</span></li></ol></details>
         </article>
         <div class="demo-sub" id="docuask-cli">
           <div class="demo-sub-head"><span class="pill">For developers</span><h4>The same engine from the command line</h4><p>Document Ask also runs as a console app: it indexes a folder of documents once, caches the embeddings, then answers questions in the terminal with the sources listed.</p></div>
@@ -628,7 +637,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
         <div class="ph"><small>Phase 4</small><b>Angular review dashboard</b></div>
         <div class="ph"><small>Phase 5</small><b>API Management and Azure deployment</b></div>
       </div>
-      <a class="code-link gh-follow" href="https://github.com/jaindollyy/smart-order-intake" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Follow the build on GitHub</a>
+      <a class="btn gh-follow" href="https://github.com/jaindollyy/smart-order-intake" target="_blank" rel="noopener"><svg class="ghi" viewBox="0 0 16 16" aria-hidden="true"><path fill="currentColor" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>Follow the build on GitHub</a>
     </div>
   </section>
 
