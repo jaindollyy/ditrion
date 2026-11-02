@@ -352,6 +352,24 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .mini-flow span{font-size:12.5px;line-height:1.4;color:var(--muted)}
 .demo-feature.flip .mini-flow{order:3}
 @media (max-width:860px){.mini-flow ol{grid-template-columns:1fr 1fr}.mini-flow li::after{display:none}.mini-flow li:last-child{grid-column:1/-1}}
+
+/* what I do */
+.fcard{transition:border-color .15s ease,transform .15s ease}
+.fcard:hover{border-color:var(--accent);transform:translateY(-2px)}
+.ficon{width:44px;height:44px;border-radius:12px;background:var(--accent-soft);display:grid;place-items:center}
+.fcard .ficon svg{width:22px;height:22px;min-width:22px;color:var(--accent);flex:none}
+.seeit{margin-top:auto;padding-top:14px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px}
+.seeit span{font:500 11px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.seeit a{font-weight:600;font-size:14px;text-decoration:none}
+.seeit a:hover{text-decoration:underline}
+@media (prefers-reduced-motion:reduce){.fcard:hover{transform:none}}
+
+.principles div{display:flex;flex-direction:column}
+.inpractice{margin-top:auto;padding-top:14px;display:block;color:var(--fg);text-decoration:none;font-size:14px;line-height:1.45}
+.inpractice span{display:block;font:500 10.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 6px}
+.principles p{margin-bottom:16px!important}
+.inpractice{border-top:1px dashed var(--line)}
+.inpractice:hover{color:var(--accent)}
 </style>
 </head>
 <body>
@@ -453,31 +471,37 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   <section id="focus">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">What I do</span><h2>Where AI meets real software engineering</h2><p>Nearly two decades of business software experience, with an AI layer on top.</p></div>
+      <div class="sec-head"><span class="eyebrow">What I do</span><h2>AI features that work inside real software</h2><p>Not standalone chatbots. AI that connects to your APIs, data and workflows, and is validated, secured and tested like the rest of the application. Each area links to a working example.</p></div>
       <div class="focus">
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg>
-          <h3>LLMs in .NET apps</h3><p>Calling OpenAI and other models from C# to summarise, classify and extract data.</p>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 9l-3 3 3 3M16 9l3 3-3 3M13.5 6l-3 12"/></svg></span>
+          <h3>LLMs inside .NET apps</h3><p>Calling models from C# with structured output, mapped to typed data and validated before the app uses it.</p>
+          <div class="seeit"><span>See it</span><a href="#building">Smart Order Intake →</a></div>
         </article>
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M14 3l5 5v2"/><circle cx="16.5" cy="16.5" r="3"/><path d="M21 21l-2.3-2.3"/></svg>
-          <h3>RAG over business data</h3><p>Answering questions from a company's own documents using embeddings and vector search.</p>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h4"/><path d="M14 3l5 5v2"/><circle cx="16.5" cy="16.5" r="3"/><path d="M21 21l-2.3-2.3"/></svg></span>
+          <h3>RAG over business documents</h3><p>Answers from a company's own documents, with the source passages shown so people can check them.</p>
+          <div class="seeit"><span>See it</span><a href="#demo-docuask">Document Ask →</a></div>
         </article>
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9.5 16.5h5"/></svg>
-          <h3>AI agents and memory</h3><p>Agents that call business systems to finish real tasks, and manage memory across conversations.</p>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="8" width="14" height="11" rx="3"/><path d="M12 8V4M9 13h.01M15 13h.01M9.5 16.5h5"/></svg></span>
+          <h3>AI agents and tool calling</h3><p>Agents that call real functions to get work done, with clear limits on what they can change.</p>
+          <div class="seeit"><span>See it</span><a href="#demo-career">Career Agent →</a><a href="#demo-booking">Booking Desk →</a></div>
         </article>
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/><path d="M12 13v5M9 18h6"/></svg>
-          <h3>APIs and MCP</h3><p>Connecting AI to business systems through REST APIs and the Model Context Protocol.</p>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 7H6a3 3 0 0 0 0 6h3M15 7h3a3 3 0 0 1 0 6h-3M8 10h8"/><path d="M12 13v5M9 18h6"/></svg></span>
+          <h3>APIs and MCP</h3><p>Connecting AI to existing systems through REST APIs and the Model Context Protocol.</p>
+          <div class="seeit"><span>See it</span><a href="#demo-booking">Booking Desk →</a></div>
         </article>
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-3 4-8 12-9-1 8-6 11-9 12z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 15c-1.5 1.5-2 5-2 5s3.5-.5 5-2"/><path d="M9 15l-3-3c1-3 4-8 12-9-1 8-6 11-9 12z"/><circle cx="14.5" cy="9.5" r="1.5"/></svg></span>
           <h3>Full stack delivery</h3><p>Angular front ends, .NET Web APIs and SQL Server: the application an AI feature has to live inside.</p>
+          <div class="seeit"><span>See it</span><a href="#demo-tcg">Test Case Generator →</a></div>
         </article>
         <article class="fcard">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8z"/><path d="M18 15l.8 2.2L21 18l-2.2.8L18 21l-.8-2.2L15 18l2.2-.8z"/></svg>
-          <h3>AI-assisted development</h3><p>Building and testing faster with AI coding tools, and knowing where to stay careful.</p>
+          <span class="ficon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 12l2 2 4-4"/><path d="M12 3l7 3v5c0 4.5-3 8.3-7 10-4-1.7-7-5.5-7-10V6z"/></svg></span>
+          <h3>Tested and reliable</h3><p>Unit tests that swap the model for a fake, CI on every push, and AI output checked before it is trusted.</p>
+          <div class="seeit"><span>See it</span><a href="https://github.com/jaindollyy" target="_blank" rel="noopener">Code on GitHub →</a></div>
         </article>
       </div>
     </div>
@@ -485,16 +509,16 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
 
   <section id="approach">
     <div class="wrap">
-      <div class="sec-head"><span class="eyebrow">Approach</span><h2>How I approach AI work</h2><p>AI is only useful when it fits the way a business already works. These principles shape everything I build and write.</p></div>
+      <div class="sec-head"><span class="eyebrow">Approach</span><h2>How I approach AI work</h2><p>AI is only useful when it fits the way a business already works. These principles shape what I build, and each one shows up in the demos below.</p></div>
       <div class="principles">
-        <div><small>01</small><h3>Start with the workflow</h3><p>Begin with a real business process and the problem in it, then decide whether AI is the right tool at all.</p></div>
-        <div><small>02</small><h3>Structured, checked output</h3><p>I request structured output, map it to typed data, and validate it before it reaches a database or customer.</p></div>
-        <div><small>03</small><h3>Secure by design</h3><p>Least-privilege access, untrusted input treated as untrusted, and a human in the loop for anything risky.</p></div>
-        <div><small>04</small><h3>Tested like any other code</h3><p>Automated tests and CI as standard practice, and AI answers checked against real examples instead of assumed to be right.</p></div>
+        <div><small>01</small><h3>Start with the workflow</h3><p>Begin with a real business process and the problem in it, then decide whether AI is the right tool at all.</p><a class="inpractice" href="#building"><span>In practice</span>Smart Order Intake starts from how orders already arrive: by email.</a></div>
+        <div><small>02</small><h3>Structured, checked output</h3><p>I request structured output, map it to typed data, and validate it before it reaches a database or customer.</p><a class="inpractice" href="#building"><span>In practice</span>Extracted orders become typed C# records and pass validation rules first.</a></div>
+        <div><small>03</small><h3>Secure by design</h3><p>Least-privilege access, untrusted input treated as untrusted, and a human in the loop for anything risky.</p><a class="inpractice" href="#demo-booking"><span>In practice</span>The Booking Desk agent can request a change, but never edit a booking.</a></div>
+        <div><small>04</small><h3>Tested like any other code</h3><p>Automated tests and CI as standard practice, and AI answers checked against real examples instead of assumed to be right.</p><a class="inpractice" href="https://github.com/jaindollyy/smart-order-intake" target="_blank" rel="noopener"><span>In practice</span>Tests swap the model for a fake, and CI runs on every push.</a></div>
       </div>
       <div class="industries">
         <span class="eyebrow">Industry experience</span>
-        <div class="chips2"><span>Financial services</span><span>Travel</span><span>Healthcare</span><span>Education</span><span>Payroll</span><span>Enterprise SaaS</span></div>
+        <div class="chips2"><span>Financial services</span><span>Travel</span><span>Healthcare</span><span>Education</span><span>Payroll</span><span>Asset management</span><span>Enterprise SaaS</span></div>
       </div>
     </div>
   </section>
@@ -503,7 +527,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
     <div class="wrap">
       <div class="sec-head"><span class="eyebrow">Demos</span><h2>Built and working</h2><p>Short walkthroughs of AI tools I've built end to end. Where available, each project links to its code.</p></div>
       <div class="demos">
-        <article class="demo-feature">
+        <article id="demo-tcg" class="demo-feature">
           <div class="demo-video">
             <video src="test-case-generator.mp4" poster="test-case-generator.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the AI Test Case Generator"></video>
           </div>
@@ -521,7 +545,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>User story</b><span>Feature and story typed into the app</span></li><li><small>Angular 21</small><b>Web app</b><span>Sends the request to one endpoint</span></li><li><small>n8n</small><b>Workflow</b><span>Calls the model provider</span></li><li><small>LLM</small><b>Generates cases</b><span>Positive, negative and edge cases</span></li><li><small>Review</small><b>Approve and export</b><span>Excel or PDF</span></li></ol></div>
         </article>
-        <article class="demo-feature flip">
+        <article id="demo-career" class="demo-feature flip">
           <div class="demo-video tall">
             <video src="career-chatbot.mp4" poster="career-chatbot.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the Career Conversation Agent"></video>
           </div>
@@ -537,7 +561,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Visitor question</b><span>Asked in the chat window</span></li><li><small>Gradio</small><b>Chat app</b><span>Python chat interface</span></li><li><small>OpenAI</small><b>Model + my profile</b><span>Summary and LinkedIn profile as context</span></li><li><small>Tools</small><b>Tool calling</b><span>Records questions it can't answer</span></li><li><small>Output</small><b>Answer</b><span>Unanswered questions reach me as a notification</span></li></ol></div>
         </article>
-        <article class="demo-feature">
+        <article id="demo-booking" class="demo-feature">
           <div class="demo-video">
             <video src="booking-desk-mcp.mp4" poster="booking-desk-mcp.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of the Booking Desk MCP server"></video>
           </div>
@@ -555,7 +579,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           </div>
           <div class="mini-flow"><span class="mf-label">How it works</span><ol><li><small>Input</small><b>Customer request</b><span>Typed to an AI assistant</span></li><li><small>MCP</small><b>C# MCP server</b><span>4 tools the assistant can call</span></li><li><small>C#</small><b>Validate</b><span>Reference, date, status, duplicates</span></li><li><small>API</small><b>Booking API</b><span>ASP.NET Core over HTTP</span></li><li><small>Output</small><b>Change request</b><span>Waits for a person to review</span></li></ol></div>
         </article>
-        <article class="demo-feature flip">
+        <article id="demo-docuask" class="demo-feature flip">
           <div class="demo-video tall">
             <video src="docuask-web.mp4" poster="docuask-web.jpg" muted loop playsinline autoplay controls preload="metadata" aria-label="Walkthrough of Document Ask: uploading a tender and asking questions about it" style="aspect-ratio:720/840"></video>
           </div>
@@ -636,7 +660,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
           <h3>Dolly Jain</h3>
           <div class="role">Independent Software Consultant · Melbourne, Australia</div>
           <p>I'm a full stack .NET engineer with nearly 20 years of experience, including 12+ years at Australian companies. I started Ditrion.ai to apply that experience to practical AI features in business software, and to share what I build.</p>
-          <details class="more"><summary>More about my background</summary><p>Earlier in my career I worked for clients in the USA, UK and India. I've built business software across financial services, travel, healthcare, education, payroll and enterprise SaaS, working across the full software development life cycle in Agile teams, from requirements and design through build, testing and release.</p></details>
+          <details class="more"><summary>More about my background</summary><p>Earlier in my career I worked for clients in the USA, UK and India. I've built business software across financial services, travel, healthcare, education, payroll, asset management and enterprise SaaS, working across the full software development life cycle in Agile teams, from requirements and design through build, testing and release.</p></details>
         </div>
       </div>
     </div>
